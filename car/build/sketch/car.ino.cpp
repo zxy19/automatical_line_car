@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 // #define DEBUG
 #include "Control.h"
 #include "DataStorage.h"
@@ -56,17 +56,17 @@ const String W_NET =
     "null};if(g(\"ip\"))_i(\"i\").innerHTML=`${g(\"ip\")}\x3A\xE6\xA3\x80\xE6\xB5\x8B\xE5\x88\xB0\x49\x50\xE3\x80\x82\xE8\xAF\xB7\xE8\xBF\x9E\xE6\x8E\xA5\xE7\xBD\x91\xE7\xBB\x9C${"
     "g(\"ssid\")}\xE5\xB9\xB6\xE5\x88\xB7\xE6\x96\xB0\xE6\x9D\xA5\xE8\xAE\xBF\xE9\x97\xAE\xE7\xAE\xA1\xE7\x90\x86\xE9\xA1\xB5<a "
     "class='btn'onclick='location.reload()'>\xE7\x82\xB9\xE5\x87\xBB\xE9\x87\x8D\xE8\xBD\xBD</a>`;</script></body></html>";
-#line 57 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 57 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 void responseAll(String query, String data);
-#line 69 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 69 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 String getResponseFor(data_parser::Result result, Type sourceType, Stream *source);
-#line 168 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 168 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 void startConnection(String ssid, String pass);
-#line 174 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 174 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 void setup();
-#line 206 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 206 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 void loop();
-#line 57 "D:\\study\\automatical_line_car\\car\\car.ino"
+#line 57 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
 void responseAll(String query, String data) {
     String temp;
     temp = responseGenerator::getResponseGenerally(Type::BINARY, query, data);

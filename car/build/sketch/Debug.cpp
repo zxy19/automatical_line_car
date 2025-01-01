@@ -1,4 +1,4 @@
-#line 1 "D:\\study\\automatical_line_car\\car\\Debug.cpp"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\Debug.cpp"
 #include "debug.h"
 Stream *getDebugStream(){
     if(currentDbg == debugClientCount){

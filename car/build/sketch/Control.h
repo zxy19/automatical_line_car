@@ -1,4 +1,4 @@
-#line 1 "D:\\study\\automatical_line_car\\car\\Control.h"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\Control.h"
 #ifndef CONTROL_H
 #define CONTROL_H
 
@@ -12,7 +12,9 @@
 #define SONIC_ECHO 32
 
 #define MOTOR_L 34
+#define MOTOR_L_REVERSE 36
 #define MOTOR_R 35
+#define MOTOR_R_REVERSE 37
 #include <Arduino.h>
 namespace Control {
 extern bool GRAY_VALUE_LL;
@@ -25,13 +27,13 @@ extern unsigned int lastSonic;
 extern bool sonicHigh;
 extern unsigned int lastTime;
 
-extern unsigned char motorLeft;
-extern unsigned char motorRight;
+extern int motorLeft;
+extern int motorRight;
 
 void controlCommand(String _cmd);
 void init();
 void update(unsigned int time);
-void setMotor(unsigned char left, unsigned char right);
+void setMotor(int left, int right);
 }; // namespace Control
 
 #endif

@@ -1,4 +1,4 @@
-#line 1 "D:\\study\\automatical_line_car\\car\\Planner.cpp"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\Planner.cpp"
 #include "Planner.h"
 #include "Control.h"
 #include "DataStorage.h"
@@ -110,6 +110,7 @@ void Planner::updateNext(unsigned int t) {
         Control::setMotor(0, 0);
         return;
     }
+    getDebugStream()->println("Stage:" + String(currentStage) + " Progress:" + String(currentStageProgress));
     if(!PlanStage::runStageCheck(currentStage,currentStageProgress)){
         currentStageProgress++;
         if(currentStageProgress > 3){

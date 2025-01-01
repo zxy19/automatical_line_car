@@ -1,4 +1,4 @@
-#line 1 "D:\\study\\automatical_line_car\\car\\.vscode\\settings.json"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\.vscode\\settings.json"
 {
     "files.associations": {
         "*.embeddedhtml": "html",
@@ -49,5 +49,10 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3B244C",
+        "titleBar.activeBackground": "#53326B",
+        "titleBar.activeForeground": "#FCFAFD"
     }
 }

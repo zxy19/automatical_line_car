@@ -1,4 +1,4 @@
-#line 1 "D:\\study\\automatical_line_car\\car\\DataStorage.cpp"
+#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\DataStorage.cpp"
 #include "DataStorage.h"
 #include "Debug.h"
 int data_storage::DATA[data_storage::MAX_DATA_SIZE];

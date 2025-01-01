@@ -1,6 +1,7 @@
 #include "Control.h"
 #include "DataStorage.h"
 #include "Planner.h"
+#include <cmath>
 
 bool Control::GRAY_VALUE_LL = false;
 bool Control::GRAY_VALUE_L = false;
@@ -12,8 +13,8 @@ unsigned int Control::sonicSend = 0;
 unsigned int Control::lastSonic = 0;
 bool Control::sonicHigh = false;
 unsigned int Control::lastTime = 0;
-unsigned char Control::motorLeft = 0;
-unsigned char Control::motorRight = 0;
+int Control::motorLeft = 0;
+int Control::motorRight = 0;
 
 unsigned char timeloop = 0;
 
@@ -56,12 +57,16 @@ void Control::update(unsigned int time) {
     Planner::updateNext(time);
 
     timeloop += (time - lastTime);
-    digitalWrite(MOTOR_L,timeloop > motorLeft);
-    digitalWrite(MOTOR_R,timeloop > motorRight);
+    digitalWrite(MOTOR_L_EN, timeloop < abs(motorLeft));
+    digitalWrite(MOTOR_R_EN, timeloop < abs(motorRight));
+    digitalWrite(MOTOR_L,motorLeft > 0);
+    digitalWrite(MOTOR_R,motorRight > 0);
+    digitalWrite(MOTOR_L_REVERSE,motorLeft < 0);
+    digitalWrite(MOTOR_R_REVERSE,motorRight < 0);
     lastTime = time;
 }
 
-void Control::setMotor(unsigned char left, unsigned char right) {
+void Control::setMotor(int left, int right) {
     motorLeft = left;
     motorRight = right;
 }

@@ -1,17 +1,22 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
-#define GRAY_LL 13
-#define GRAY_L 12
-#define GRAY_M 14
-#define GRAY_R 27
-#define GRAY_RR 26
+#define GRAY_LL 10
+#define GRAY_L 9
+#define GRAY_M 8
+#define GRAY_R 11
+#define GRAY_RR 7
 
-#define SONIC_SEND 33
-#define SONIC_ECHO 32
+#define SONIC_SEND 5
+#define SONIC_ECHO 4
 
-#define MOTOR_L 34
-#define MOTOR_R 35
+#define MOTOR_L_EN 14
+#define MOTOR_L 12
+#define MOTOR_L_REVERSE 13
+#define MOTOR_R 15
+#define MOTOR_R_REVERSE 3
+#define MOTOR_R_EN 1
+
 #include <Arduino.h>
 namespace Control {
 extern bool GRAY_VALUE_LL;
@@ -24,13 +29,13 @@ extern unsigned int lastSonic;
 extern bool sonicHigh;
 extern unsigned int lastTime;
 
-extern unsigned char motorLeft;
-extern unsigned char motorRight;
+extern int motorLeft;
+extern int motorRight;
 
 void controlCommand(String _cmd);
 void init();
 void update(unsigned int time);
-void setMotor(unsigned char left, unsigned char right);
+void setMotor(int left, int right);
 }; // namespace Control
 
 #endif

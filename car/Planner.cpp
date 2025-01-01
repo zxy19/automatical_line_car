@@ -88,6 +88,8 @@ void Planner::init() {
     data_storage::setDefaultIfZero(data_storage::DATA_PARAM_OBS_T4, 1000);
     data_storage::setDefaultIfZero(data_storage::DATA_DELAY_START, 1000);
     data_storage::setDefaultIfZero(data_storage::DATA_PARAM_SONIC_THRESHOLD, 40);
+
+    reset();
 }
 void Planner::reset() {
     currentStage = 0;
@@ -109,6 +111,7 @@ void Planner::updateNext(unsigned int t) {
         Control::setMotor(0, 0);
         return;
     }
+    getDebugStream()->println("Stage:" + String(currentStage) + " Progress:" + String(currentStageProgress));
     if(!PlanStage::runStageCheck(currentStage,currentStageProgress)){
         currentStageProgress++;
         if(currentStageProgress > 3){
