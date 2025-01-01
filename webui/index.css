@@ -1,0 +1,72 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sv-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  box-shadow: 1px 1px 2px gray;
+  margin: 5px;
+  border-radius: 5px;
+}
+.sensor-container,
+.value-container {
+  width: 100%;
+  max-width: 500px;
+}
+.control-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sensor-name,
+.sensor-value {
+  flex-grow: 1;
+}
+.value-name {
+  flex-grow: 1;
+}
+input.value.changed {
+  background-color: #ffe0b2;
+}
+input[type="text"],
+input[type="number"],
+.ipt-style,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  padding: 10px 8px;
+  box-shadow: 0 0 2px 0px #4c4c4c;
+  border-radius: 5px;
+  border: gray 1px solid;
+}
+.ipt-style:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 2px 0px #2196f3;
+}
+.btn {
+  border: gray 1px solid;
+  padding: 6px 10px 10px 10px;
+  border-radius: 5px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #0277bd;
+}

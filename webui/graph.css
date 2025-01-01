@@ -1,0 +1,20 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+#chart {
+  width: 100%;
+  height: 400px;
+  max-width: 800px;
+  background-color: #f8bbd0;
+  position: relative;
+}
+#chart-sensor {
+  width: 100%;
+  height: 400px;
+  max-width: 800px;
+  background-color: #fcb0cb;
+  position: relative;
+}

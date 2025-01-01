@@ -1,0 +1,12 @@
+<script>
+  function getQueryParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+  var target = getQueryParam("ip");
+  if (target) {
+    location.href = "http://" + target;
+  }
+</script>
