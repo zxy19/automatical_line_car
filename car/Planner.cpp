@@ -3,9 +3,9 @@
 #include "DataStorage.h"
 #include "PlanStages.h"
 #include "Utils.h"
+#include "debug.h"
 #include <utility>
 #include <vector>
-#include "debug.h"
 unsigned int Planner::nextLeft = 0;
 unsigned int Planner::nextRight = 0;
 
@@ -96,27 +96,23 @@ void Planner::reset() {
     currentStageProgress = 1;
     pause();
 }
-void Planner::pause() {
-    isPaused = true;
-}
-void Planner::resume() {
-    isPaused = false;
-}
+void Planner::pause() { isPaused = true; }
+void Planner::resume() { isPaused = false; }
 void Planner::updateNext(unsigned int t) {
-    data_storage::setData(data_storage::DATA_PHASE,currentStageProgress,false);
-    data_storage::setData(data_storage::DATA_STAGE,currentStage,false);
-    data_storage::setData(data_storage::DATA_PAUSE,isPaused,false);
-    
-    if(isPaused){
+    data_storage::setData(data_storage::DATA_PHASE, currentStageProgress, false);
+    data_storage::setData(data_storage::DATA_STAGE, currentStage, false);
+    data_storage::setData(data_storage::DATA_PAUSE, isPaused, false);
+
+    if (isPaused) {
         Control::setMotor(0, 0);
         return;
     }
-    getDebugStream()->println("Stage:" + String(currentStage) + " Progress:" + String(currentStageProgress));
-    if(!PlanStage::runStageCheck(currentStage,currentStageProgress)){
+    if (!PlanStage::runStageCheck(currentStage, currentStageProgress)) {
         currentStageProgress++;
-        if(currentStageProgress > 3){
+        if (currentStageProgress > 3) {
             currentStageProgress = 1;
             currentStage++;
         }
+        getDebugStream()->println("Switch Stage:" + String(currentStage) + " Progress:" + String(currentStageProgress));
     }
 }

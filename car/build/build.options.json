@@ -4,8 +4,8 @@
   "compiler.optimization_flags": "",
   "customBuildProperties": "",
   "fqbn": "esp8266:esp8266:generic:xtal=80,vt=flash,exception=disabled,stacksmash=disabled,ssl=all,mmu=3232,non32xfer=fast,ResetMethod=nodemcu,CrystalFreq=26,FlashFreq=40,FlashMode=dout,eesz=1M64,led=2,sdk=nonosdk_190703,ip=lm2f,dbg=Disabled,lvl=None____,wipe=none,baud=115200",
-  "hardwareFolders": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages",
-  "otherLibrariesFolders": "C:\\Users\\18668\\Documents\\Arduino\\libraries",
+  "hardwareFolders": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "D:\\Users\\Document\\Arduino\\libraries",
   "runtime.ide.version": "10607",
-  "sketchLocation": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car"
+  "sketchLocation": "D:\\study\\automatical_line_car\\car"
 }

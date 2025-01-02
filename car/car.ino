@@ -9,9 +9,6 @@
 #include <DNSServer.h>
 #include <ESP8266WiFi.h>
 
-#define SUB_SERIAL Serial1
-#define DEV_SERIAL Serial
-
 WiFiServer server(80);
 DNSServer dnsServer;
 int isWlanChecking = 0;
@@ -26,7 +23,7 @@ constexpr int storeDataSingle_long = 3;
 constexpr int maxStoreDataLen_last = storeDataSingle_last * 2400;
 constexpr int maxStoreDataLen_long = storeDataSingle_long * 4320;
 int persistLoopLast = 0, persistLoopLong = 0;
-data_parser::Parser fromSUB_SERIAL, fromSerial2, wifi[maxClients];
+data_parser::Parser fromDebugInitial, wifi[maxClients];
 bool isHttpClient[maxClients];
 WiFiClient client[maxClients];
 
@@ -54,18 +51,6 @@ const String W_NET =
     "null};if(g(\"ip\"))_i(\"i\").innerHTML=`${g(\"ip\")}\x3A\xE6\xA3\x80\xE6\xB5\x8B\xE5\x88\xB0\x49\x50\xE3\x80\x82\xE8\xAF\xB7\xE8\xBF\x9E\xE6\x8E\xA5\xE7\xBD\x91\xE7\xBB\x9C${"
     "g(\"ssid\")}\xE5\xB9\xB6\xE5\x88\xB7\xE6\x96\xB0\xE6\x9D\xA5\xE8\xAE\xBF\xE9\x97\xAE\xE7\xAE\xA1\xE7\x90\x86\xE9\xA1\xB5<a "
     "class='btn'onclick='location.reload()'>\xE7\x82\xB9\xE5\x87\xBB\xE9\x87\x8D\xE8\xBD\xBD</a>`;</script></body></html>";
-void responseAll(String query, String data) {
-    String temp;
-    temp = responseGenerator::getResponseGenerally(Type::BINARY, query, data);
-    for (int i = 0; i < 5; i++) {
-        if (client[i].connected() && !isHttpClient[i]) {
-            client[i].print(temp);
-        }
-    }
-    SUB_SERIAL.print(temp);
-    temp = responseGenerator::getResponseGenerally(Type::STRING, query, data);
-    DEV_SERIAL.print(temp);
-}
 String getResponseFor(data_parser::Result result, Type sourceType, Stream *source) {
     String query = result.query;
     // getDebugStream()->printf("getResponseFor %s\r\n", query.c_str());
@@ -162,7 +147,7 @@ String getResponseFor(data_parser::Result result, Type sourceType, Stream *sourc
         return responseGenerator::getResponseGenerally(Type::HTTP, "Redirecting",
                                                        "<script>location.href='http://jump.xypp.cc/net.html?ip=" + wlanIp + "&ssid=" + WiFi.SSID() + "';</script>");
     } else
-        return responseGenerator::getResponseGenerally(sourceType, "ERROR", "Unknown query");
+        return responseGenerator::getResponseGenerally(sourceType, "ERROR", "Unknown query "+result.query);
 }
 
 void startConnection(String ssid, String pass) {
@@ -173,10 +158,11 @@ void startConnection(String ssid, String pass) {
 }
 void setup() {
     delay(1000);
-    DEV_SERIAL.begin(115200);
-    SUB_SERIAL.begin(115200);
+#ifdef USB_DEBUG
+    Serial.begin(115200);
+#endif
     data_storage::init();
-    String wlan = "";
+    String wlan = "magicNet:::123456987";
     WiFi.mode(WIFI_AP_STA);
     WiFi.softAP("TERMINAL_NETWORK_CONFIG");
     if (wlan.length() != 0) {
@@ -189,11 +175,14 @@ void setup() {
     }
     server.begin();
     WiFi.softAPIP().printTo(*getDebugStream());
-    DEV_SERIAL.println();
     dnsServer.start(53, "*", WiFi.softAPIP());
+    getDebugStream()->println("TTTTT");
     Control::init();
+    getDebugStream()->println("TTTTT2");
     data_storage::setData(data_storage::DATA_START, 0);
+    getDebugStream()->println("TEST12111");
     delay(1000);
+    getDebugStream()->println("132423875493");
 }
 unsigned sepDatas = 0;
 unsigned long last = 0;
@@ -207,7 +196,7 @@ void loop() {
     dnsServer.processNextRequest();
     unsigned long now = millis();
     if (now > last && last != 0) {
-        // Serial.printf("%d -> %d [acc=%d;timeLoop=%d,lastTimeL=%d]\n", last, now, accurateTime, timeLoop, lastTime_l1000);
+        // getDebugStream()->printf("%d -> %d [acc=%d;timeLoop=%d,lastTimeL=%d]\n", last, now, accurateTime, timeLoop, lastTime_l1000);
         accurateTime += (now - last);
         if (accurateTime > 100) {
             timeLoop += accurateTime / 100;
@@ -277,22 +266,13 @@ void loop() {
     }
     last = now;
 
-    while (SUB_SERIAL.available()) {
-        fromSerial2.nextChar(SUB_SERIAL.read());
-        if (fromSerial2.isOK()) {
-            String result = getResponseFor(fromSerial2.getResult(), Type::BINARY, &SUB_SERIAL);
+    while (INITIAL_STREAM.available()) {
+        fromDebugInitial.nextChar(INITIAL_STREAM.read());
+        if (fromDebugInitial.isOK()) {
+            String result = getResponseFor(fromDebugInitial.getResult(), Type::BINARY, &INITIAL_STREAM);
             if (result != "")
-                DEV_SERIAL.print(result);
-            fromSerial2.clear();
-        }
-    }
-    while (DEV_SERIAL.available()) {
-        fromSUB_SERIAL.nextChar(DEV_SERIAL.read());
-        if (fromSUB_SERIAL.isOK()) {
-            String result = getResponseFor(fromSUB_SERIAL.getResult(), Type::BINARY, &DEV_SERIAL);
-            if (result != "")
-                DEV_SERIAL.print(result);
-            fromSUB_SERIAL.clear();
+                INITIAL_STREAM.print(result);
+            fromDebugInitial.clear();
         }
     }
     if (server.hasClient()) {

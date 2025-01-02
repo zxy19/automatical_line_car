@@ -1,6 +1,7 @@
 #include "Control.h"
 #include "DataStorage.h"
 #include "Planner.h"
+#include "debug.h"
 #include <cmath>
 
 bool Control::GRAY_VALUE_LL = false;
@@ -25,10 +26,12 @@ void Control::init() {
     pinMode(GRAY_R, INPUT);
     pinMode(GRAY_RR, INPUT);
     pinMode(MOTOR_L, OUTPUT);
+    pinMode(MOTOR_L_EN, OUTPUT);
     pinMode(MOTOR_R, OUTPUT);
+    pinMode(MOTOR_R_EN, OUTPUT);
     pinMode(SONIC_ECHO, INPUT);
-    pinMode(SONIC_SEND, INPUT);
-    data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
+    pinMode(SONIC_SEND, OUTPUT);
+    // data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
 
     Planner::init();
 }
@@ -59,24 +62,30 @@ void Control::update(unsigned int time) {
     timeloop += (time - lastTime);
     digitalWrite(MOTOR_L_EN, timeloop < abs(motorLeft));
     digitalWrite(MOTOR_R_EN, timeloop < abs(motorRight));
-    digitalWrite(MOTOR_L,motorLeft > 0);
-    digitalWrite(MOTOR_R,motorRight > 0);
-    digitalWrite(MOTOR_L_REVERSE,motorLeft < 0);
-    digitalWrite(MOTOR_R_REVERSE,motorRight < 0);
+    digitalWrite(MOTOR_L, motorLeft > 0);
+    digitalWrite(MOTOR_R, motorRight > 0);
+#ifdef MOTOR_L_REVERSE
+    digitalWrite(MOTOR_L_REVERSE, motorLeft < 0);
+#endif
+#ifdef MOTOR_R_REVERSE
+    digitalWrite(MOTOR_R_REVERSE, motorRight < 0);
+#endif
     lastTime = time;
 }
 
 void Control::setMotor(int left, int right) {
     motorLeft = left;
     motorRight = right;
+    //getDebugStream()->println("S_Motor: " + String(left) + " " + String(right));
 }
 
 void Control::controlCommand(String _cmd) {
-    if(_cmd == "start"){
+    getDebugStream()->println("S_MODE: " + _cmd);
+    if (_cmd == "start") {
         Planner::resume();
-    }else if(_cmd == "reset"){
+    } else if (_cmd == "reset") {
         Planner::reset();
-    }else if(_cmd == "pause"){
+    } else if (_cmd == "pause") {
         Planner::pause();
     }
 }

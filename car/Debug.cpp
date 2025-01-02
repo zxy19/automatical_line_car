@@ -1,11 +1,12 @@
 #include "debug.h"
+tmpBuf _tmpBuf;
 Stream *getDebugStream(){
     if(currentDbg == debugClientCount){
-        return &Serial;
+        return &INITIAL_STREAM;
     }else{
         if(!clients[currentDbg].connected()){
             currentDbg = debugClientCount;
-            return &Serial;
+            return &INITIAL_STREAM;
         }
         return clients+currentDbg;
     }

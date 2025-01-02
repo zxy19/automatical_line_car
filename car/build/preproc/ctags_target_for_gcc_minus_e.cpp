@@ -1,14 +1,14 @@
-# 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino"
+# 1 "D:\\study\\automatical_line_car\\car\\car.ino"
 // #define DEBUG
-# 3 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 4 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 5 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 6 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 7 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 8 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 9 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 10 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
-# 11 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\car.ino" 2
+# 3 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 4 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 5 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 6 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 7 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 8 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 9 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 10 "D:\\study\\automatical_line_car\\car\\car.ino" 2
+# 11 "D:\\study\\automatical_line_car\\car\\car.ino" 2
 
 
 
@@ -192,9 +192,13 @@ void setup() {
     WiFi.softAPIP().printTo(*getDebugStream());
     Serial.println();
     dnsServer.start(53, "*", WiFi.softAPIP());
+    getDebugStream()->println("TTTTT");
     Control::init();
+    getDebugStream()->println("TTTTT2");
     data_storage::setData(data_storage::DATA_START, 0);
+    getDebugStream()->println("TEST12111");
     delay(1000);
+    getDebugStream()->println("132423875493");
 }
 unsigned sepDatas = 0;
 unsigned long last = 0;
@@ -208,7 +212,7 @@ void loop() {
     dnsServer.processNextRequest();
     unsigned long now = millis();
     if (now > last && last != 0) {
-        // Serial.printf("%d -> %d [acc=%d;timeLoop=%d,lastTimeL=%d]\n", last, now, accurateTime, timeLoop, lastTime_l1000);
+        getDebugStream()->printf("%d -> %d [acc=%d;timeLoop=%d,lastTimeL=%d]\n", last, now, accurateTime, timeLoop, lastTime_l1000);
         accurateTime += (now - last);
         if (accurateTime > 100) {
             timeLoop += accurateTime / 100;

@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\Planner.cpp"
+#line 1 "D:\\study\\automatical_line_car\\car\\Planner.cpp"
 #include "Planner.h"
 #include "Control.h"
 #include "DataStorage.h"
@@ -89,6 +89,8 @@ void Planner::init() {
     data_storage::setDefaultIfZero(data_storage::DATA_PARAM_OBS_T4, 1000);
     data_storage::setDefaultIfZero(data_storage::DATA_DELAY_START, 1000);
     data_storage::setDefaultIfZero(data_storage::DATA_PARAM_SONIC_THRESHOLD, 40);
+
+    reset();
 }
 void Planner::reset() {
     currentStage = 0;

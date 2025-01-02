@@ -1,8 +1,9 @@
-#line 1 "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\Control.cpp"
+#line 1 "D:\\study\\automatical_line_car\\car\\Control.cpp"
 #include "Control.h"
 #include "DataStorage.h"
 #include "Planner.h"
 #include <cmath>
+#include "debug.h"
 
 bool Control::GRAY_VALUE_LL = false;
 bool Control::GRAY_VALUE_L = false;
@@ -23,13 +24,13 @@ void Control::init() {
     pinMode(GRAY_L, INPUT);
     pinMode(GRAY_LL, INPUT);
     pinMode(GRAY_M, INPUT);
-    pinMode(GRAY_R, INPUT);
-    pinMode(GRAY_RR, INPUT);
-    pinMode(MOTOR_L, OUTPUT);
-    pinMode(MOTOR_R, OUTPUT);
-    pinMode(SONIC_ECHO, INPUT);
-    pinMode(SONIC_SEND, INPUT);
-    data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
+    // pinMode(GRAY_R, INPUT);
+    // pinMode(GRAY_RR, INPUT);
+    // pinMode(MOTOR_L, OUTPUT);
+    // pinMode(MOTOR_R, OUTPUT);
+    // pinMode(SONIC_ECHO, INPUT);
+    // pinMode(SONIC_SEND, OUTPUT);
+    // data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
 
     Planner::init();
 }
@@ -58,16 +59,19 @@ void Control::update(unsigned int time) {
     Planner::updateNext(time);
 
     timeloop += (time - lastTime);
-    digitalWrite(MOTOR_L,timeloop > abs(motorLeft) && motorLeft > 0);
-    digitalWrite(MOTOR_R,timeloop > abs(motorRight) && motorRight > 0);
-    digitalWrite(MOTOR_L_REVERSE,timeloop > abs(motorLeft) && motorLeft < 0);
-    digitalWrite(MOTOR_R_REVERSE,timeloop > abs(motorRight) && motorRight < 0);
+    digitalWrite(MOTOR_L_EN, timeloop < abs(motorLeft));
+    digitalWrite(MOTOR_R_EN, timeloop < abs(motorRight));
+    digitalWrite(MOTOR_L,motorLeft > 0);
+    digitalWrite(MOTOR_R,motorRight > 0);
+    digitalWrite(MOTOR_L_REVERSE,motorLeft < 0);
+    digitalWrite(MOTOR_R_REVERSE,motorRight < 0);
     lastTime = time;
 }
 
 void Control::setMotor(int left, int right) {
     motorLeft = left;
     motorRight = right;
+    getDebugStream()->println("S_Motor: " + String(left) + " " + String(right));
 }
 
 void Control::controlCommand(String _cmd) {

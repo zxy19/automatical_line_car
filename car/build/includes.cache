@@ -2,160 +2,160 @@
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\cores\\esp8266"
+    "Includepath": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\cores\\esp8266"
   },
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\variants\\generic"
+    "Includepath": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\variants\\generic"
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
     "Include": "EEPROM.h",
-    "Includepath": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\EEPROM"
+    "Includepath": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\EEPROM"
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
     "Include": "ESP8266WiFi.h",
-    "Includepath": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src"
+    "Includepath": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src"
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
     "Include": "DNSServer.h",
-    "Includepath": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\DNSServer\\src"
+    "Includepath": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\DNSServer\\src"
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\car.ino.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\Control.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\Control.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\DataParser.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\DataParser.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\DataStorage.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\DataStorage.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\Debug.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\Debug.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\PlanStages.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\PlanStages.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\Planner.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\Planner.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\Utils.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\Utils.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\Desktop\\automatical_line_car\\car\\build\\sketch\\responseGenerator.cpp",
+    "Sourcefile": "D:\\study\\automatical_line_car\\car\\build\\sketch\\responseGenerator.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\EEPROM\\EEPROM.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\EEPROM\\EEPROM.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\BearSSLHelpers.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\BearSSLHelpers.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\CertStoreBearSSL.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\CertStoreBearSSL.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFi.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFi.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiAP.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiAP.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiGeneric.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiGeneric.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiGratuitous.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiGratuitous.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiMulti.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiMulti.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiSTA-WPS.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiSTA-WPS.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiSTA.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiSTA.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiScan.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\ESP8266WiFiScan.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiClient.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiClient.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiClientSecureBearSSL.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiClientSecureBearSSL.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiServer.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiServer.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiServerSecureBearSSL.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiServerSecureBearSSL.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiUdp.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\WiFiUdp.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\enable_wifi_at_boot_time.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\ESP8266WiFi\\src\\enable_wifi_at_boot_time.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\18668\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\DNSServer\\src\\DNSServer.cpp",
+    "Sourcefile": "C:\\Users\\zxypp\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.1.2\\libraries\\DNSServer\\src\\DNSServer.cpp",
     "Include": "",
     "Includepath": null
   }

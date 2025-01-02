@@ -1,21 +1,22 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
-#define GRAY_LL 10
-#define GRAY_L 9
-#define GRAY_M 8
-#define GRAY_R 11
-#define GRAY_RR 7
+#define GRAY_LL 5
+#define GRAY_L 4
+#define GRAY_M 14
+#define GRAY_R 12
+#define GRAY_RR 13
 
-#define SONIC_SEND 5
-#define SONIC_ECHO 4
+#define SONIC_SEND 16
+#define SONIC_ECHO 1
 
-#define MOTOR_L_EN 14
-#define MOTOR_L 12
-#define MOTOR_L_REVERSE 13
-#define MOTOR_R 15
-#define MOTOR_R_REVERSE 3
-#define MOTOR_R_EN 1
+#define MOTOR_L_EN 0
+#define MOTOR_L 2
+// #define MOTOR_L_REVERSE 13
+#define MOTOR_R 8
+
+// #define MOTOR_R_REVERSE 3
+#define MOTOR_R_EN 9
 
 #include <Arduino.h>
 namespace Control {

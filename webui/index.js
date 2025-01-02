@@ -54,9 +54,9 @@ Object.keys(values).forEach(id => {
   valueContainer.appendChild(value);
 });
 const controls = {
-  "command-start": "Start",
-  "command-pause": "Pause",
-  "command-reset": "Reset"
+  "start": "Start",
+  "pause": "Pause",
+  "reset": "Reset"
 }
 Object.keys(controls).forEach(id => {
   const control = document.createElement("button");
