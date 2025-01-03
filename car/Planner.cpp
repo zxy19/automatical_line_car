@@ -62,7 +62,7 @@ void Planner::calcCommonPid() {
     if (outputBias > 0) {
         Control::setMotor(baseMotorSpd * std::min(outputBias, 100.0) / 100, baseMotorSpd);
     } else {
-        Control::setMotor(baseMotorSpd, baseMotorSpd * std::max(outputBias, -100.0) / 100);
+        Control::setMotor(baseMotorSpd, baseMotorSpd * std::max(outputBias, -100.0) / -100);
     }
 }
 
@@ -107,7 +107,7 @@ void Planner::updateNext(unsigned int t) {
         Control::setMotor(0, 0);
         return;
     }
-    if (!PlanStage::runStageCheck(currentStage, currentStageProgress)) {
+    if (!PlanStage::runStageCheck(t,currentStage, currentStageProgress)) {
         currentStageProgress++;
         if (currentStageProgress > 3) {
             currentStageProgress = 1;

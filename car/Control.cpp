@@ -13,6 +13,7 @@ bool Control::GRAY_VALUE_RR = false;
 unsigned int Control::sonicSend = 0;
 unsigned int Control::lastSonic = 0;
 bool Control::sonicHigh = false;
+bool Control::sonicWait = false;
 unsigned int Control::lastTime = 0;
 int Control::motorLeft = 0;
 int Control::motorRight = 0;
@@ -31,7 +32,7 @@ void Control::init() {
     pinMode(MOTOR_R_EN, OUTPUT);
     pinMode(SONIC_ECHO, INPUT);
     pinMode(SONIC_SEND, OUTPUT);
-    // data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
+    data_storage::setData(data_storage::DATA_SONIC, 0xffff, false);
 
     Planner::init();
 }
@@ -42,24 +43,29 @@ void Control::update(unsigned int time) {
     data_storage::setData(data_storage::DATA_SENSOR_3, GRAY_VALUE_R = digitalRead(GRAY_R), false);
     data_storage::setData(data_storage::DATA_SENSOR_4, GRAY_VALUE_RR = digitalRead(GRAY_RR), false);
 
-    if (time - lastSonic > 500) {
+    if (time - lastSonic > 1000) {
+        getDebugStream()->println("S_Sonic: " + String(time));
         lastSonic = time;
         sonicHigh = true;
+        sonicWait = false;
         digitalWrite(SONIC_SEND, HIGH);
     }
     if (sonicHigh && time - lastSonic >= 10) {
         sonicHigh = false;
         lastSonic = time;
+        sonicWait = true;
         digitalWrite(SONIC_SEND, LOW);
     }
 
-    if (digitalRead(SONIC_ECHO)) {
+    if (sonicWait && digitalRead(SONIC_ECHO)) {
+        sonicWait = false;
+        getDebugStream()->println("E_Sonic: " + String(time - lastSonic));
         data_storage::setData(data_storage::DATA_SONIC, (time - lastSonic) * 500 / 29.1, false);
     }
 
     Planner::updateNext(time);
 
-    timeloop += (time - lastTime);
+    timeloop = (timeloop + time - lastTime) % 40;
     digitalWrite(MOTOR_L_EN, timeloop < abs(motorLeft));
     digitalWrite(MOTOR_R_EN, timeloop < abs(motorRight));
     digitalWrite(MOTOR_L, motorLeft > 0);

@@ -11,7 +11,7 @@ class Stage {
     virtual bool after(unsigned int t);
 };
 void initStages();
-bool runStageCheck(int stageIdx,int phase);
+bool runStageCheck(unsigned int time,int stageIdx,int phase);
 extern std::vector<Stage*> stages;
 } // namespace Planner
 
