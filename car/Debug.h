@@ -1,7 +1,7 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#define USB_DEBUG
+// #define USB_DEBUG
 
 #include <ESP8266WiFi.h>
 #include <Stream.h>

@@ -17,7 +17,7 @@ String wlanIp = "";
 // 1:正在连接,2:已失败,3:成功
 int wlanStatus = 0;
 
-constexpr int maxClients = 10;
+constexpr int maxClients = 4;
 constexpr int storeDataSingle_last = 3;
 constexpr int storeDataSingle_long = 3;
 constexpr int maxStoreDataLen_last = storeDataSingle_last * 2400;

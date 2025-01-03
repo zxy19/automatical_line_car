@@ -268,11 +268,11 @@ void PlanStage::initStages() {
     stages.push_back(new StageTurnLeft());
     stages.push_back(new StageStop());
 }
-bool PlanStage::runStageCheck(int stageIdx,int phase){
+bool PlanStage::runStageCheck(unsigned int time, int stageIdx,int phase){
     PlanStage::Stage *stage = PlanStage::stages[stageIdx];
-    if(phase == 1) return stage->before(Planner::currentStageProgress);
-    if(phase == 2) return stage->run(Planner::currentStageProgress);
-    if(phase == 3) return stage->after(Planner::currentStageProgress);
+    if(phase == 1) return stage->before(time);
+    if(phase == 2) return stage->run(time);
+    if(phase == 3) return stage->after(time);
     return false;
 }
 

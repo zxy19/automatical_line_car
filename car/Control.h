@@ -7,16 +7,15 @@
 #define GRAY_R 12
 #define GRAY_RR 13
 
-#define SONIC_SEND 16
-#define SONIC_ECHO 1
+#define SONIC_SEND 1
+#define SONIC_ECHO 16
 
 #define MOTOR_L_EN 0
 #define MOTOR_L 2
 // #define MOTOR_L_REVERSE 13
-#define MOTOR_R 8
-
+#define MOTOR_R 15
 // #define MOTOR_R_REVERSE 3
-#define MOTOR_R_EN 9
+#define MOTOR_R_EN 3
 
 #include <Arduino.h>
 namespace Control {
@@ -28,6 +27,7 @@ extern bool GRAY_VALUE_RR;
 extern unsigned int sonicSend;
 extern unsigned int lastSonic;
 extern bool sonicHigh;
+extern bool sonicWait;
 extern unsigned int lastTime;
 
 extern int motorLeft;
