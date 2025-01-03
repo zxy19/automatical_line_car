@@ -147,7 +147,7 @@ String getResponseFor(data_parser::Result result, Type sourceType, Stream *sourc
         return responseGenerator::getResponseGenerally(Type::HTTP, "Redirecting",
                                                        "<script>location.href='http://jump.xypp.cc/net.html?ip=" + wlanIp + "&ssid=" + WiFi.SSID() + "';</script>");
     } else
-        return responseGenerator::getResponseGenerally(sourceType, "ERROR", "Unknown query "+result.query);
+        return responseGenerator::getResponseGenerally(sourceType, "ERROR", "Unknown query " + result.query);
 }
 
 void startConnection(String ssid, String pass) {
@@ -194,6 +194,7 @@ int loopCount_60s = 0;
 int loopCount_500ms = 0;
 void loop() {
     dnsServer.processNextRequest();
+    int singleLimit = 0;
     unsigned long now = millis();
     if (now > last && last != 0) {
         // getDebugStream()->printf("%d -> %d [acc=%d;timeLoop=%d,lastTimeL=%d]\n", last, now, accurateTime, timeLoop, lastTime_l1000);
@@ -291,7 +292,11 @@ void loop() {
     }
     for (int i = 0; i < maxClients; i++) {
         if (client[i].connected()) {
+            singleLimit = 200;
             while (client[i].available()) {
+                if ((singleLimit--) <= 0) {
+                    break;
+                }
                 wifi[i].nextChar(client[i].read());
                 if (wifi[i].isOK()) {
                     if (wifi[i].getResult().type == Type::HTTP)

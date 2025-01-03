@@ -67,15 +67,20 @@ Object.keys(controls).forEach(id => {
   };
   valueContainer.appendChild(control);
 });
+function delay(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 async function updateSensors() {
   for (const id in sensors) {
     const sensor = document.getElementById(`sensor-${id}`);
     sensor.innerText = await getValue(id);
+    await delay(200);
   }
   for (const id in values) {
     const value = document.getElementById(`value-${id}`);
     value.value = await getValue(id);
+    await delay(200);
   }
   setTimeout(updateSensors, 1000);
 }
